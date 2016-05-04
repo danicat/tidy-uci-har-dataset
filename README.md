@@ -1,12 +1,12 @@
-# Tidy UCI HAR Dataset
+# Human Activity Recognition (HAR) Tidy Data Set processing script in R
 
-By Danicat <daniela.petruzalek@gmail.com>
+By Daniela Petruzalek (<daniela.petruzalek@gmail.com>)
 
 May 4, 2016
 
 ## Project Description
 
-The purpose of this repo is to provide a R script for tidying the data of the UCI's "Human Activity Recognition Using Smartphones Dataset" (for now on referenced as UCI HAR Dataset) version 1.0.
+The purpose of this repo is to provide a R script for tidying the data of the UCI's "Human Activity Recognition Using Smartphones Dataset" (for now on referenced as UCI HAR Dataset) version 1.0 [1].
 
 This repo is composed of one R script called "run_analysis.R" that does all the work. Basically it will:
 
@@ -24,11 +24,15 @@ In order to run the script as is, type on the R prompt:
 
 ## RAW Dataset
 
-The raw dataset complete description can be found at the link below:
+The raw data set complete description can be found at the link below:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 This script downloads the data from:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+## Tidy Data Set
+
+The tidy data set is not included in this repo, but it can be obtained with the provided script. Processing time should be under a minute on a modern computer (test machine was a Linux Mint VM with one core of a Intel(R) Core(TM) i5-4310U CPU @ 2.00GHz and 1 GB of RAM).
 
 ## Code Book
 
@@ -36,7 +40,7 @@ For the complete reference of the "UCI HAR Tidy Dataset" please check the CodeBo
 
 ## Contact Info
 
-For information and/or comments, feel free to contact me at daniela.petruzalek@gmail.com. I'm also available on Twitter (@danicat83) and LinkedIn (http://br.linkedin.com/petruzalek)
+For information and/or comments, feel free to contact me at daniela.petruzalek@gmail.com. I'm also available on Twitter ([@danicat83](https://twitter.com/danicat83)) and LinkedIn (http://br.linkedin.com/in/petruzalek)
 
 ## References
 
