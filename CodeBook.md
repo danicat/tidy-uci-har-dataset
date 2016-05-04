@@ -60,7 +60,47 @@ group_by was used to group the data set by activity and subject.
 
 summarize_each was used to calculate the mean for all measures in the data set.
 
-The final result is stored in "ds2".
+The final result is stored in "ds2" and output to file 'dataset.txt'.
+
+## Variables
+
+- subject: identifies the subject, numeric, range 1-30
+- activity: identifies the subject's activity, factor w/ 6 levels: WALKING,
+WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING
+- measures: all measures are double, names are composed as follows:
+-- prefix: t = time domain / f = frequency domain
+-- Acc: acelerometer data / Gyro: gyroscope data
+-- Body: body acceleration signal / Gravity: gravity acceleration signal
+-- Jerk: Jerk signal / Mag: magnitude
+-- postfix: X / Y / Z denoting the axis in the X, Y and Z directions
+
+Note: for a complete description of the signals, please refer to the file 'features_info.txt' in the raw data set.
+
+- measures list:
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+For each of those measures it was estimated the mean value and standard deviation, denoted by the following postfixes:
+
+- mean: Mean value
+- std: Standard deviation
+
+The default data set output from the 'run_analysis.R' script summarizes the data as the mean of all measures grouped by activity and subject. Expected output: 180 observations of 68 cols.
 
 ## Contact Info
 

@@ -43,13 +43,6 @@ setwd("UCI HAR Dataset")
 # - 'train/y_train.txt': Training labels.
 # - 'test/X_test.txt': Test set.
 # - 'test/y_test.txt': Test labels.
-#
-# The following files are available for the train and test data. Their descriptions are equivalent. 
-#
-# - 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-# - 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
-# - 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
-# - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
 # Load files to memory, variable names kept same as file names for consistency
 activity_labels <- read.table("activity_labels.txt")
@@ -63,14 +56,6 @@ y_test  <- read.table("test/y_test.txt") # Test labels.
 
 subject_train <- read.table(file.path("train","subject_train.txt"))
 subject_test  <- read.table(file.path("test","subject_test.txt"))
-
-## The files below were not needed for this project
-#total_acc_x_train <- read.table(file.path("train","Inertial Signals","total_acc_x_train.txt"))
-#body_acc_x_train  <- read.table(file.path("train","Inertial Signals","body_acc_x_train.txt"))
-#body_gyro_x_train <- read.table(file.path("train","Inertial Signals","body_gyro_x_train.txt"))
-#total_acc_x_test <- read.table(file.path("test","Inertial Signals","total_acc_x_test.txt"))
-#body_acc_x_test  <- read.table(file.path("test","Inertial Signals","body_acc_x_test.txt"))
-#body_gyro_x_test <- read.table(file.path("test","Inertial Signals","body_gyro_x_test.txt"))
 
 # Task 1: Merge the training and the test sets to create one data set.
 #
@@ -121,6 +106,9 @@ ds2 <- mutate(ds, subject = as.factor(subject)) %>%
         group_by(activity, subject) %>% 
         summarize_each(funs(mean)) %>% 
         ungroup
+
+# Output tidy data set
+write.table(ds2, "dataset.txt", row.names = FALSE)
 
 # Restore original working dir
 setwd(old.path)
