@@ -1,4 +1,6 @@
-## UCI HAR Tidy Dataset by Danicat <daniela.petruzalek@gmail.com>
+## Tidy UCI HAR Dataset
+
+# By Danicat <daniela.petruzalek@gmail.com>
 
 The purpose of this repo is to provide a R script for tidying the data of the UCI's "Human Activity Recognition Using Smartphones Dataset" (for now on referenced as UCI HAR Dataset) version 1.0.
 
